@@ -13,6 +13,10 @@ Configuración del marcador de la FIRST Lego League en OBS Studio.
 ├── images/
 │   ├── background.png       # Fondo de la cortina
 │   └── loading_animation.gif # Animación de carga
+├── screenshots/
+│   ├── OBS.png              # Vista general de OBS configurado
+│   ├── curtain.png          # Cortina de carga en acción
+│   └── timer.png            # Temporizador de ronda
 ├── audio/
 │   ├── Timer-01.mp3
 │   ├── Timer-02.mp3
@@ -29,6 +33,8 @@ Configuración del marcador de la FIRST Lego League en OBS Studio.
 2. Revisa que todo carga bien: escenas, fuentes, cortina y scripts.
 3. Listo. Si algo no funciona, consulta la sección correspondiente abajo.
 
+![Vista general de OBS configurado](screenshots/OBS.png)
+
 ---
 
 ## Troubleshooting
@@ -38,7 +44,7 @@ Configuración del marcador de la FIRST Lego League en OBS Studio.
 El CSS personalizado no se ha aplicado o se ha perdido al importar.
 
 1. Doble clic en la fuente **Browser**.
-2. Comprueba que la url es la que toca.
+2. Comprueba que **Ancho** es `1920` y **Alto** es `1080`.
 3. En **CSS personalizado**, borra todo y pega el contenido de **`table.css`**.
 4. Si no queda centrado: clic derecho sobre la fuente → **Transformar → Estirar a la pantalla** (`Ctrl+S`).
 
@@ -53,12 +59,14 @@ El grupo `Update_Curtain` no existe o le faltan elementos.
 2. Si no están agrupadas: selecciona las tres (`Ctrl+clic`), clic derecho → **Agrupar los elementos seleccionados** → nombrar `Update_Curtain`.
 3. Clic derecho sobre el grupo → **Mostrar transición** → Desvanecimiento. Igual en **Ocultar transición**.
 
+![Cortina de carga](screenshots/curtain.png)
+
 ### El script de recarga automática no funciona
 
 1. Ve a **Herramientas → Scripts**. Si `curtain.lua` no aparece, pulsa **+** y selecciónalo de la carpeta del proyecto.
 2. En el panel derecho, comprueba que los nombres coinciden exactamente con tus fuentes en OBS:
    - **Scene Name:** nombre de tu escena (ej. `Website_Feed`)
-   - **Browser Source:** nombre de tu fuente web (ej. `Browser`)
+   - **Browser Source:** nombre de tu fuente web (ej. `Browser A`)
    - **Group Name:** `Update_Curtain`
    - **Text Source Name:** nombre de tu fuente de texto (ej. `Status Text`)
    - **Message:** `Cargando`
@@ -69,6 +77,8 @@ Controles durante el evento:
 - **▶ START AUTOMATION** — Arranca el temporizador de 5 min.
 - **🔄 REFRESH NOW** — Fuerza una recarga inmediata.
 - **⏹ STOP** — Detiene la automatización.
+
+![Temporizador de ronda](screenshots/timer.png)
 
 ### El audio no sale por HDMI (altavoces de la pista)
 
