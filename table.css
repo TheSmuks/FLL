@@ -1,0 +1,41 @@
+/* 1. Hide the scrollbars completely */
+::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* 2. Hide absolutely everything on the page */
+* {
+    visibility: hidden !important;
+}
+
+/* 3. Bring the table wrapper and ALL its internal text/rows back to life */
+.table-wrapper, .table-wrapper * {
+    visibility: visible !important;
+}
+
+/* 4. The Perfect Frame: Pin to edges and force rounded corners */
+.table-wrapper {
+    position: fixed !important;
+    /* This creates a perfect 30px gap on all 4 sides */
+    top: 30px !important;
+    left: 30px !important;
+    right: 30px !important;
+    bottom: 30px !important;
+    
+    /* Override any weird website sizing */
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    
+    /* Rebuild the rounded broadcast look */
+    background-color: #ffffff !important; /* Gives the table a solid background */
+    border-radius: 16px !important; /* Smooth rounded corners */
+    border: 1px solid #cccccc !important; /* Clean subtle border */
+    
+    /* CRITICAL: Stops the table rows from spilling out of the rounded corners */
+    overflow: hidden !important; 
+    box-sizing: border-box !important;
+    
+    /* Adds a slight shadow to make it float off the background */
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.3) !important;
+}
